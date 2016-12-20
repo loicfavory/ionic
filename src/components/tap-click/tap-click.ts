@@ -230,7 +230,7 @@ export const isActivatable = function (ele: HTMLElement) {
   }
 
   for (let i = 0, l = ACTIVATABLE_ATTRIBUTES.length; i < l; i++) {
-    if (ele.hasAttribute(ACTIVATABLE_ATTRIBUTES[i])) {
+    if (typeof ele.hasAttribute == "function" && ele.hasAttribute(ACTIVATABLE_ATTRIBUTES[i])) {
       return true;
     }
   }
